@@ -95,25 +95,25 @@ In the second sample, you can only collect <span class="tex-span">60</span> frui
 
 </div>
 </div>
-<pre class="lang:c decode:true">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include &lt;algorithm&gt;
+```
+#include<stdio.h>
+#include<string.h>
+#include <algorithm>
 using namespace std;
 int main()
 {
 	long int n,v,vv,a[3008],b[3008] ,i,ii,t,o,y,iy;
-	while (scanf("%d%d", &amp;n, &amp;v) != EOF)
+	while (scanf("%d%d", &n, &v) != EOF)
 	{
 		o = 0; vv = v; y = 0;
-		for (i = 0; i &lt; n; i++)
+		for (i = 0; i < n; i++)
 		{
-			cin &gt;&gt; a[i]&gt;&gt;b[i];
+			cin >> a[i]>>b[i];
 		}
-		for (i = 0; i &lt; n; i++)
-			for (ii = i + 1; ii &lt; n; ii++)
+		for (i = 0; i < n; i++)
+			for (ii = i + 1; ii < n; ii++)
 			{
-				if (a[i]&gt;a[ii])
+				if (a[i]>a[ii])
 				{ 
 					t = a[i]; a[i] = a[ii]; a[ii] = t; 
 					t = b[i]; b[i] = b[ii]; b[ii] = t;
@@ -125,20 +125,20 @@ int main()
 		//
 		//
 
-		for (i = 0; i &lt; n; i++)
+		for (i = 0; i < n; i++)
 		{
 			if (i != 0)
 			{
 				if (a[i] != a[i - 1]) { v = vv; }
 
 			}
-			if (v != 0 &amp;&amp; i != 0)
+			if (v != 0 && i != 0)
 			{
-				for (iy = y; iy &lt; i; iy++)
+				for (iy = y; iy < i; iy++)
 				{
 					if (b[iy] != 0)
 					{
-						if (v &lt;= b[iy])
+						if (v <= b[iy])
 						{
 							o += v; b[iy] -= v; v = 0;
 						}
@@ -146,16 +146,16 @@ int main()
 					}
 				}
 			}
-			if (a[i] - a[i - 1] &gt; 1) v = vv;
+			if (a[i] - a[i - 1] > 1) v = vv;
 			if (v != 0)
 			{
-				if (v &lt;= b[i])
+				if (v <= b[i])
 				{
 					o += v; b[i] -= v; v = 0;
 				}
 				else { o += b[i]; v -= b[i]; b[i] = 0; }
 			}
-			if (a[i - 1] != a[i]&amp;&amp;i!=0) y = i;
+			if (a[i - 1] != a[i]&&i!=0) y = i;
 
 		}
 
@@ -165,11 +165,11 @@ int main()
 
 		v = vv; 
 
-		for (iy = y; iy &lt; i; iy++)
+		for (iy = y; iy < i; iy++)
 		{
 			if (b[iy] != 0)
 			{
-				if (v &lt;= b[iy])
+				if (v <= b[iy])
 				{
 					o += v; b[iy] -= v; v = 0;
 				}
@@ -177,12 +177,12 @@ int main()
 			}
 		}
 
-		cout &lt;&lt; o &lt;&lt; endl;
+		cout << o << endl;
 
 	}
 	return(0);
 }
-</pre>
+```
 &nbsp;
 
 * * *
@@ -300,7 +300,7 @@ Hint
 
 Consider the first sample. The notes below show how the spider arrangement changes on the field over time:
 <pre>...        ...        ..U       ...
-R.L   -&gt;   .*U   -&gt;   L.R   -&gt;  ...
+R.L   ->   .*U   ->   L.R   ->  ...
 R.U        .R.        ..R       ...
 
 </pre>
@@ -311,37 +311,39 @@ Character "<span class="tex-font-style-tt">*</span>" represents a cell that cont
 *   If he starts from the third cell, he will see two spiders: one at time 1, the other one at time 2.
 </div>
 </div>
-<pre class="lang:c decode:true">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
+```
+#include<iostream>
+#include<stdio.h>
 using namespace std;
 int main()
 {
 	int n, m, k,i,j,fuck;
 	char in[2002][2002];
-	while (scanf("%d%d%d", &amp;n,&amp;m,&amp;k) != EOF)
+	while (scanf("%d%d%d", &n,&m,&k) != EOF)
 	{	
 		fuck = 0;
-		for (i = 0; i &lt; n; i++)
-			for (j = 0; j &lt; m; j++)
+		for (i = 0; i < n; i++)
+			for (j = 0; j < m; j++)
 			{
-				cin &gt;&gt; in[i][j];
+				cin >> in[i][j];
 			}
 
-		for (j = 0; j &lt; m; j++)
+		for (j = 0; j < m; j++)
 		{
-			for (i = 1; i &lt; n; i++)
+			for (i = 1; i < n; i++)
 			{
-				if(i+i&lt;n)if (in[i + i][j] == 'U')fuck++;
-				if (j - i&gt;=0&amp;&amp;j-i&lt;m)if (in[i][j - i] == 'R')fuck++;
-				if (j + i&lt;m)if (in[i][j + i] == 'L')fuck++;
+				if(i+i<n)if (in[i + i][j] == 'U')fuck++;
+				if (j - i>=0&&j-i<m)if (in[i][j - i] == 'R')fuck++;
+				if (j + i<m)if (in[i][j + i] == 'L')fuck++;
 			}
-			cout &lt;&lt; fuck &lt;&lt; ' '; fuck = 0;
+			cout << fuck << ' '; fuck = 0;
 		}
-        cout&lt;&lt;endl;
+        cout<<endl;
 
 	}
 	return(0);
-}</pre>
+}
+```
 &nbsp;
 
 * * *
@@ -420,35 +422,37 @@ Sample Input
 </div>
 </div>
 </div>
-<pre class="lang:c decode:true ">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;cstring&gt;
+```
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+#include<cstring>
 using namespace std;
 int main()
 {
 	long int n, x[100008], y[100008],  i = 0, j,xxx[100008],yyy[100008],u;
-	while (scanf("%d", &amp;n) != EOF)
+	while (scanf("%d", &n) != EOF)
 	{
 
 		memset(xxx, 0, sizeof(xxx));
 		memset(yyy, 0, sizeof(yyy));
-		for (i = 0; i &lt; n; i++)
+		for (i = 0; i < n; i++)
 		{
-			cin &gt;&gt; x[i] &gt;&gt; y[i];
+			cin >> x[i] >> y[i];
 
 			xxx[x[i]]++;
 			yyy[y[i]]++;
 		}
-		for (i = 0; i &lt; n; i++)
+		for (i = 0; i < n; i++)
 		{
 			u = n - xxx[y[i]] - 1;
-			cout &lt;&lt; 2*n - 2 - u  &lt;&lt; ' ' &lt;&lt; u &lt;&lt; endl;
+			cout << 2*n - 2 - u  << ' ' << u << endl;
 		}
 
 	}
 	return(0);
-}</pre>
+}
+```
 &nbsp;
 
 * * *
@@ -520,35 +524,37 @@ Sample Input
 </div>
 </div>
 </div>
-<pre class="lang:c decode:true ">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;cstring&gt;
+```
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+#include<cstring>
 using namespace std;
 int main()
 {
 	long int n, x[100008], y[100008],  i = 0, j,xxx[100008],yyy[100008],u;
-	while (scanf("%d", &amp;n) != EOF)
+	while (scanf("%d", &n) != EOF)
 	{
 
 		memset(xxx, 0, sizeof(xxx));
 		memset(yyy, 0, sizeof(yyy));
-		for (i = 0; i &lt; n; i++)
+		for (i = 0; i < n; i++)
 		{
-			cin &gt;&gt; x[i] &gt;&gt; y[i];
+			cin >> x[i] >> y[i];
 
 			xxx[x[i]]++;
 			yyy[y[i]]++;
 		}
-		for (i = 0; i &lt; n; i++)
+		for (i = 0; i < n; i++)
 		{
 			u = n - xxx[y[i]] - 1;
-			cout &lt;&lt; 2*n - 2 - u  &lt;&lt; ' ' &lt;&lt; u &lt;&lt; endl;
+			cout << 2*n - 2 - u  << ' ' << u << endl;
 		}
 
 	}
 	return(0);
-}</pre>
+}
+```
 &nbsp;
 
 * * *
@@ -626,34 +632,36 @@ Sample Input
 </div>
 </div>
 </div>
-<pre class="lang:c decode:true ">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;cstring&gt;
+```
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+#include<cstring>
 using namespace std;
 int main()
 {
 	long int o[5][5], i,j, ii, iii, a, b, c, d, e,m=0,max=0;
-	while (scanf("%d", &amp;o[0][0]) != EOF)
+	while (scanf("%d", &o[0][0]) != EOF)
 	{
-		for (i = 0; i &lt; 5; i++)
-			for (j = 0; j &lt; 5; j++)
+		for (i = 0; i < 5; i++)
+			for (j = 0; j < 5; j++)
 			{
-				if (i == 0 &amp;&amp; j == 0)j++;
-				cin &gt;&gt; o[i][j];
+				if (i == 0 && j == 0)j++;
+				cin >> o[i][j];
 			}
-		for (a = 0; a &lt; 5; a++)
-			for (b = 0; b &lt; 5;b++)
-				for (c = 0; c &lt; 5; c++)
-					for (d = 0; d &lt; 5; d++)
-						for (e = 0; e &lt; 5; e++)
+		for (a = 0; a < 5; a++)
+			for (b = 0; b < 5;b++)
+				for (c = 0; c < 5; c++)
+					for (d = 0; d < 5; d++)
+						for (e = 0; e < 5; e++)
 						{
-							if(a!=b&amp;&amp;a!=c&amp;&amp;a!=d&amp;&amp;a!=e&amp;&amp;b!=c&amp;&amp;b!=d&amp;&amp;b!=e&amp;&amp;c!=d&amp;&amp;c!=e&amp;&amp;d!=e)
+							if(a!=b&&a!=c&&a!=d&&a!=e&&b!=c&&b!=d&&b!=e&&c!=d&&c!=e&&d!=e)
 							m = o[a][b] + o[b][a] + o[b][c] + o[c][b] + (o[c][d] + o[d][c]) * 2 + (o[d][e] + o[e][d]) * 2;
-							if (m&gt;max) max = m;
+							if (m>max) max = m;
 						}
-		cout &lt;&lt; max&lt;&lt;endl;
+		cout << max<<endl;
 	}
 	return(0);
-}</pre>
+}
+```
 &nbsp;

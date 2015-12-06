@@ -1,0 +1,67 @@
+## Services
+google_analytics:
+duoshuo: zaq12wsde
+
+## Meta
+rss: http://blog.cosimahan.com/atom.xml
+favicon: /favicon.png
+#icon: /favicon.png
+source_url: https://github.com/cosimahan/cosimahan.github.io/
+license:
+  name: 'CC BY-NC-SA 3.0'
+  url: 'http://creativecommons.org/licenses/by-nc-sa/3.0/cn'
+
+## Menus
+menus:
+  '主页': /
+  'GitHub': https://github.com/cosimahan
+  '关于': /about
+  '留言板': /messageboard
+
+right_menus:
+  'RSS': /atom.xml
+#  'fork on Github':
+#    target: '_blank'
+#    href: 'hexo-theme-simpleblock'
+
+## Banners && Widgets
+banners: 0
+#  jade: #|
+#    a(href='https://github.com/jysperm/hexo-theme-simpleblock') 与精子同款的博客主题 simpleblock 现已发布！
+
+widgets:
+
+  #-
+    #tags: true
+
+  -
+    archives: true
+  -
+    markdown: |
+      
+      链接
+      * <a href="http://www.liangdick.com/" target="_blank">Dick的博客</a> 
+      * <a href="http://www.mmuti.com/" target="_blank">宁美国度</a> 
+      * <a href="http://www.anumall.com/" target="_blank">阿奴官网旗舰店</a> 
+      * <a href="http://www.shangxizhe.org/" target="_blank">尚西哲男装官网</a> 
+      * <a href="http://www.miaojia.org/" target="_blank">缪佳旗舰店</a> 
+      * <a href="http://wenbiquan.cnartka.com/" target="_blank">温碧泉化妆品怎么样 </a>
+      
+
+  -
+    copyright: true
+
+
+## SNS (Work in progress)
+sns:
+  qq: '184300584'
+  qun: '61137226'
+  v2ex: 'jybox'
+  mobile: '17091927884'
+  github: 'jysperm'
+  keybase: 'jysperm'
+  zhihu: 'jysperm'
+  google_plus: '+王子亭jysperm'
+  segmentfault: 'jysperm'
+  twitter: 'jysperm'
+  bitcoin: '13v2BTCMZMHg5v87susgg86HFZqXERuwUd'
