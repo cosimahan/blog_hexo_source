@@ -1,6 +1,6 @@
 layout: 
 title: 基于MATLAB GUI的简单计算器
-date: 2016-01-17 15:09:25
+date: 2015-05-17 15:09:25
 tags:
 ---
 首先网上搜索，大概了解MATLAB GUI，然后开始做。
