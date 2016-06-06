@@ -8,7 +8,8 @@ tags:
 有时间我会把它做成PHP版，那就更方便了。
 
 > main.c
-```
+
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
